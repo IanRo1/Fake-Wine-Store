@@ -1,0 +1,30 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+#wine-gallery{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows:max-content;
+    grid-gap: 10px;
+    margin:12px;
+}
+
+.wine-gallery img{
+    width:100%;
+    height:300px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+}
+
+.imgtext, .cartbtn {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
