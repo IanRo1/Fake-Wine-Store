@@ -21,10 +21,7 @@
     cursor: pointer;
 }
 
-.imgtext, .cartbtn {
-    display:flex;
-    justify-content: center;
-    align-items: center;
+.text{
+    text-align: center;
 }
-
 
