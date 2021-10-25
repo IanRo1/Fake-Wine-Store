@@ -60,12 +60,12 @@
    tag: 'Nebbiolo',
    price: 19.99 ,
    inCart: 0
-},
+}
 ];
 
   for (let i=0; i < cart.length; i++){
      cart[i].addEventListener('click', () =>{
-        cartNumbers();
+        cartNumbers(products[i]);
      })
   }
 
@@ -77,7 +77,7 @@
    }
   }
 
-  function cartNumbers(){
+  function cartNumbers(product){
      let productNumbers = localStorage.getItem('cartNumbers');
 
 
@@ -91,5 +91,27 @@
       localStorage.setItem('cartNumbers', 1);
       document.querySelector('.cart span').textContent = 1;
      }
+
+     setItems(product);
   }
+  function setItems(product){
+     let cartItems =localStorage.getItem('ProductsInCart');
+     cartItems = JSON.parse(cartItems);
+
+     if(cartItems != null){
+      if(cartItems[product.tag] == undefined){
+         cartItems = {
+            ...cartItems,
+            [product.tag]:product
+         }
+      }
+        cartItems[product.tag].inCart += 1;
+     } else {
+        product.inCart = 1;
+        cartItems = {
+       [product.tag]:product}
+     }
+     localStorage.setItem("ProductsInCart", JSON.stringify(cartItems));
+  }
+
   onLoadCartNumbers();
