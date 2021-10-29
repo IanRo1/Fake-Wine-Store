@@ -10,9 +10,11 @@ body{
     height:100%;
 }
 
-nav{
+.first{
     background:linear-gradient(to right, rgb(20, 18, 18), rgb(59, 8, 8));
 }
+
+
 
 nav{
     display:flex;
@@ -49,6 +51,13 @@ padding:30px;
 transform:translatey(25px);
     padding-left: 45px;
 
+  }
+
+  .cart-txt, .total-txt, .sp1, .sp2{
+      display: flex;
+      align-items: center;
+      margin: 3px;
+      
   }
 
 
